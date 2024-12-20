@@ -1,4 +1,4 @@
-#Rice Grain Length Detection
+Rice Grain Length Detection
 This is a Rice Grain Length Detection application built using Python, PyQt5, OpenCV, and Matplotlib. The app allows users to analyze rice grain images by detecting grain length distribution, displaying visualizations, and generating a report based on image processing.
 
 Features
