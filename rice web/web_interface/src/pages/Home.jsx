@@ -1,12 +1,12 @@
-import React from 'react';
-import Hero from '../components/Hero';
-import ImageUpload from '../components/ImageUpload';
-import FeaturesAccuracy from '../components/FeaturesAccuracy';
-import AdvantagesDisadvantages from '../components/AdvantagesDisadvantages';
-import ScreenshotGallery from '../components/ScreenshotGallery';
-import ContactForm from '../components/ContactForm';
+import React from "react";
+import Hero from "../components/Hero";
+import ImageUpload from "../components/ImageUpload";
+import FeaturesAccuracy from "../components/FeaturesAccuracy";
+import AdvantagesDisadvantages from "../components/AdvantagesDisadvantages";
+import ScreenshotGallery from "../components/ScreenshotGallery";
+import ContactForm from "../components/ContactForm";
 
-const HomePage = () => {
+const HomePage = ({ formData, setFormData, formStatus, setFormStatus }) => {
   return (
     <>
       <Hero />
@@ -14,7 +14,12 @@ const HomePage = () => {
       <FeaturesAccuracy />
       <AdvantagesDisadvantages />
       <ScreenshotGallery />
-      <ContactForm />
+      <ContactForm
+        formData={formData}
+        setFormData={setFormData}
+        formStatus={formStatus}
+        setFormStatus={setFormStatus}
+      />
     </>
   );
 };
