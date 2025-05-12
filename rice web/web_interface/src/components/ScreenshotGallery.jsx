@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import uiimage from "../../assets/uiimage.png";
 import grainslength from "../../assets/grainclassification.png";
 import outputimg from "../../assets/outputimg.png";
+import imgaqui from "../../assets/imgaqui.jpg";
 const ScreenshotGallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -24,7 +25,7 @@ const ScreenshotGallery = () => {
       caption: "Output Image showing length of grain in millimetre ",
     },
     {
-      src: "https://images.pexels.com/photos/4219111/pexels-photo-4219111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      src: imgaqui,
       alt: "System setup and calibration",
       caption: "System setup and calibration process",
     },

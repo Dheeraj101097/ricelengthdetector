@@ -22,7 +22,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", path: "/" },
 
-    { name: "Contact", path: "/contact" },
+    { name: "View More", path: "/contact" },
   ];
 
   const activeClass = "text-earth-700 font-semibold";
@@ -55,7 +55,7 @@ const Navbar = () => {
             </NavLink>
           ))}
           <a
-            href="https://github.com"
+            href="https://github.com/Dheeraj101097/ricelengthdetector.git"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
@@ -92,7 +92,7 @@ const Navbar = () => {
             </NavLink>
           ))}
           <a
-            href="https://github.com"
+            href="https://github.com/Dheeraj101097/ricelengthdetector.git"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary w-full text-center"

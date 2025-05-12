@@ -2,8 +2,6 @@ import { useState } from "react";
 import { Play, Pause, RotateCw, Ruler, ArrowRight } from "lucide-react";
 import videofile from "../../assets/video_1.mp4";
 const ImageUpload = () => {
-  const [isPlaying, setIsPlaying] = useState(true);
-
   const steps = [
     {
       title: "Image Capture",
@@ -40,40 +38,50 @@ const ImageUpload = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 max-w-6xl mx-auto animated-element">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div className=" max-w-3xl  mx-auto animated-element">
+          <div className="bg-white  rounded-lg shadow-lg overflow-hidden">
             <div className="p-4 bg-leaf-700 text-white flex items-center justify-between">
               <div className="flex items-center">
                 <Ruler className="mr-2" size={20} />
-                <span className="font-semibold">Input Feed</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <button
-                  onClick={() => setIsPlaying(!isPlaying)}
-                  className="p-2 hover:bg-leaf-600 rounded-full transition-colors"
-                >
-                  {isPlaying ? <Pause size={20} /> : <Play size={20} />}
-                </button>
-                <button
-                  className="p-2 hover:bg-leaf-600 rounded-full transition-colors"
-                  onClick={() => setIsPlaying(true)}
-                >
-                  <RotateCw size={20} />
-                </button>
+                <span className="font-semibold">
+                  Video showing how our system works
+                </span>
               </div>
             </div>
-            <div className="relative aspect-video bg-black">
-              {/* <img
-                src="https://images.pexels.com/photos/4219111/pexels-photo-4219111.jpeg"
-                alt="Rice grains input feed"
-                className="w-full h-full object-cover"
-              /> */}
-
-              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                <div className="text-white text-lg font-semibold px-4 py-2 bg-black bg-opacity-50 rounded-lg">
-                  Live Input Feed
+            <div className="relative aspect-video p-2 bg-leaf-100">
+              <video
+                controls
+                muted
+                controlsList="nodownload noremoteplayback nofullscreen"
+                className="w-full h-full object-cover rounded-lg"
+                poster="https://via.placeholder.com/800x450.png?text=Video+Preview"
+                onContextMenu={(e) => e.preventDefault()}
+                onClick={(e) => {
+                  if (e.currentTarget.paused) {
+                    e.currentTarget.play();
+                  } else {
+                    e.currentTarget.pause();
+                  }
+                }}
+                onDoubleClick={(e) => {
+                  if (e.currentTarget.requestFullscreen) {
+                    e.currentTarget.requestFullscreen();
+                  } else if (e.currentTarget.mozRequestFullScreen) {
+                    e.currentTarget.mozRequestFullScreen();
+                  } else if (e.currentTarget.webkitRequestFullscreen) {
+                    e.currentTarget.webkitRequestFullscreen();
+                  } else if (e.currentTarget.msRequestFullscreen) {
+                    e.currentTarget.msRequestFullscreen();
+                  }
+                }}
+              >
+                <source src={videofile} type="video/mp4" />
+                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                  <div className="text-white text-lg font-semibold px-4 py-2 bg-black bg-opacity-50 rounded-lg">
+                    Video showing how our system works
+                  </div>
                 </div>
-              </div>
+              </video>
             </div>
           </div>
         </div>
@@ -92,7 +100,7 @@ const ImageUpload = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-2">{step.title}</h4>
-                    {/* <p className="text-sm text-gray-600">{step.description}</p> */}
+                    <p className="text-sm text-gray-600">{step.description}</p>
                     {index < steps.length - 1}
                   </div>
                 </div>
