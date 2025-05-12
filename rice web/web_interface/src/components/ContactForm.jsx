@@ -320,7 +320,7 @@ const ContactForm = ({ formData, setFormData, formStatus, setFormStatus }) => {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto animated-element">
+        {/* <div className="max-w-3xl mx-auto animated-element">
           <form onSubmit={handleSubmit} className="card p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
@@ -436,7 +436,7 @@ const ContactForm = ({ formData, setFormData, formStatus, setFormStatus }) => {
               )}
             </div>
           </form>
-        </div>
+        </div> */}
 
         <div className="mt-16 text-center animated-element">
           <h3 className="text-2xl font-semibold mb-4">
